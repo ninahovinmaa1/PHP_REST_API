@@ -11,6 +11,7 @@ $allProducts = json_decode(file_get_contents("./products.json"), true);
 renderJson($allProducts);
 
 function renderJson($array) {
+    shuffle($array);
     $json = json_encode($array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     echo $json; 
 }
