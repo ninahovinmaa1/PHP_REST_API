@@ -9,7 +9,9 @@ class App {
   public static function main($data) {
 
     $limit = $_GET['show'] ?? null;
+    $limit = filter_var($limit, FILTER_SANITIZE_STRING);
     $category =  ($_GET['category']) ?? null;
+    $category = filter_var($category, FILTER_SANITIZE_STRING);
     $response = array();
     
     //category stuff
